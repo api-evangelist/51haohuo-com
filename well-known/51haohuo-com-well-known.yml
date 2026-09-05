@@ -1,0 +1,161 @@
+generated: '2026-09-05'
+method: probed
+source: direct HTTP probe of every host this record knows
+name: 51haohuo.com well-known and contract-discovery probe
+note: >-
+  Every probed path missed. www.51haohuo.com is an nginx 1.21.5 origin that serves one
+  static page and returns an honest 555-byte "404 Not Found" for everything else — there
+  is no SPA catch-all here, so these are real absences rather than false negatives.
+  The apex 51haohuo.com 301-redirects every path (including /.well-known/*) to
+  https://job-web.haohuoyun.com/, and job-web.haohuoyun.com in turn 301s its HTTP
+  surface to its own HTTPS origin. Those HTTPS origins present a valid TLSv1.3
+  certificate but HTTPS requests from a US vantage point stalled repeatedly without
+  returning a body, so the surface behind those redirects could not be read. The
+  readable HTTP surface is the basis for every 404 recorded here.
+  NO WellKnown OR SecurityTxt POINTER
+  IS EMITTED — nothing returned a 200 carrying a real document, and a pointer would
+  assert a surface the provider does not serve.
+hosts:
+- host: www.51haohuo.com
+  ip: 120.26.88.46
+  server: nginx/1.21.5
+  scheme: http
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: 51haohuo.com
+  ip: 120.26.88.46
+  server: nginx/1.21.5
+  scheme: http
+  note: >-
+    Apex redirects every path 301 to https://job-web.haohuoyun.com/, whose HTTPS origin
+    did not return a body from this vantage point.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: job-web.haohuoyun.com
+  ip: 120.26.88.46
+  server: nginx/1.21.5
+  scheme: http
+  note: >-
+    The redirect target the apex names. Every HTTP path 301s to the host's own HTTPS
+    origin, which did not return a body from this vantage point, so the surface behind
+    it was not readable.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery. No OpenAPI, Swagger, GraphQL, MCP, OGC or WSDL surface
+    was found on any host. No candidate parsed as a specification — every response was
+    either the nginx 404 page or a redirect.
+  probes:
+  - url: http://www.51haohuo.com/openapi.json
+    status: 404
+  - url: http://www.51haohuo.com/openapi.yaml
+    status: 404
+  - url: http://www.51haohuo.com/swagger.json
+    status: 404
+  - url: http://www.51haohuo.com/v1/openapi.json
+    status: 404
+  - url: http://www.51haohuo.com/v2/api-docs
+    status: 404
+  - url: http://www.51haohuo.com/api-docs
+    status: 404
+  - url: http://www.51haohuo.com/docs
+    status: 404
+  - url: http://www.51haohuo.com/redoc
+    status: 404
+  - url: http://www.51haohuo.com/graphql
+    status: 404
+  - url: http://www.51haohuo.com/llms.txt
+    status: 404
+  - url: http://www.51haohuo.com/robots.txt
+    status: 404
+  - url: http://www.51haohuo.com/sitemap.xml
+    status: 404
+  - url: http://www.51haohuo.com/apis.json
+    status: 404
+  - url: http://www.51haohuo.com/api
+    status: 404
+  - url: http://www.51haohuo.com/developer
+    status: 404
+  - url: http://www.51haohuo.com/open
+    status: 404
+  - url: http://www.51haohuo.com/doc
+    status: 404
+  - url: http://www.51haohuo.com/contact
+    status: 404
+  - url: http://www.51haohuo.com/about
+    status: 404
+  - url: http://job-web.haohuoyun.com/openapi.json
+    status: 301
+  - url: http://job-web.haohuoyun.com/swagger.json
+    status: 301
+  subdomains_resolved:
+  - host: www.51haohuo.com
+    dns: 120.26.88.46
+  - host: 51haohuo.com
+    dns: 120.26.88.46
+  - host: job-web.haohuoyun.com
+    dns: 120.26.88.46
+  - host: m.51haohuo.com
+    dns: 118.31.49.1
+    status: 307
+    note: Redirects to its own HTTPS origin, which did not return a body from this vantage point.
+  - host: s.51haohuo.com
+    dns: NXDOMAIN
+    note: >-
+      Search engines still index an 企业登录 (enterprise login) page on this host, but the
+      hostname no longer resolves — the gated enterprise surface it fronted is gone.
+  - host: api.51haohuo.com
+    dns: NXDOMAIN
+  - host: open.51haohuo.com
+    dns: NXDOMAIN
+  - host: dev.51haohuo.com
+    dns: NXDOMAIN
+  - host: doc.51haohuo.com
+    dns: NXDOMAIN
+  - host: haohuoyun.com
+    dns: NXDOMAIN
+    note: Apex does not resolve; only the job-web subdomain does.
+checked: '2026-09-05'

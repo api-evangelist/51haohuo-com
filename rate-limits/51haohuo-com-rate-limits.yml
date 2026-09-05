@@ -1,0 +1,30 @@
+generated: '2026-09-05'
+method: searched
+source: http://www.51haohuo.com/
+name: 51haohuo.com rate limits
+limit_count: 0
+note: >-
+  No rate limits are published, because no API is published. The company's entire
+  public web surface is a single-page marketing site; probes for a developer portal,
+  an API reference and a machine-readable specification all returned clean nginx 404s
+  (see well-known/51haohuo-com-well-known.yml for the full probe log). There is no
+  documented API, no response headers to record, and no exhaustion status code. The
+  only quantitative limits the company publishes are subscription entitlements on its
+  pricing tiers (course counts and trainee headcount), which are captured in
+  plans/51haohuo-com-plans-pricing.yml — they are not API rate limits.
+limits: []
+response_headers: []
+exhaustion_status: null
+x-evidence:
+- url: http://www.51haohuo.com/
+  http_status: 200
+  fetched: '2026-09-05'
+- url: http://www.51haohuo.com/docs
+  http_status: 404
+  fetched: '2026-09-05'
+- url: http://www.51haohuo.com/developer
+  http_status: 404
+  fetched: '2026-09-05'
+- url: http://www.51haohuo.com/api
+  http_status: 404
+  fetched: '2026-09-05'

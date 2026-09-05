@@ -1,0 +1,97 @@
+generated: '2026-09-05'
+method: searched
+source: http://www.51haohuo.com/#pricing
+name: 51haohuo.com (苏爱才 / 好活（苏州）数字科技有限公司) plans and pricing
+note: >-
+  Pricing is published in full, in RMB, on the company's single-page corporate site
+  under the 服务价格方案 ("service pricing plans") section. The page offers a
+  按月付费 / 按年付费 (monthly / annual billing) toggle but only the monthly figures are
+  rendered in the served HTML; the annual prices are not present in the document, so
+  no annual price is recorded here. These are SOFTWARE SUBSCRIPTION tiers, not API
+  plans — the company publishes no API, so no tier carries a call quota, a rate limit,
+  or an overage rate. Tier feature copy mixes generic cloud-hosting language with
+  AIBPO / 产教融合 (industry-education integration) training deliverables; both are
+  transcribed as published rather than reconciled.
+plan_count: 4
+currency: CNY
+billing_periods:
+- monthly
+- annual (toggle offered; prices not published in the served HTML)
+plans:
+- name: 基础版
+  name_en: Basic
+  price: 999
+  currency: CNY
+  period: month
+  audience: 适合初创企业和小型团队 — startups and small teams; 小微、初创企业
+  included:
+  - 产教入门神器：标准化工具 (standardized entry-level industry-education tooling)
+  - 零门槛启动产教融合 AIBPO (zero-barrier AIBPO onboarding)
+  - 基础安全防护 (basic security protection)
+  - 容器服务 (container service)
+  - 7×24小时专属支持 (24/7 dedicated support)
+  quota: none published
+  overage: none published
+  limits: none published
+- name: 企业版
+  name_en: Enterprise
+  price: 2999
+  currency: CNY
+  period: month
+  highlighted: true
+  highlight_label: 最受欢迎 (most popular)
+  audience: 适合成长型企业和中大型团队 — growth-stage and mid-to-large teams; 中型企业
+  included:
+  - 效率加速器：定制化流程 (customized process acceleration)
+  - 5门定制课程 (5 custom courses)
+  - 5人培训、认证及推荐 (training, certification and placement for 5 people)
+  - 5次校企合作深度对接 (5 school-enterprise partnership engagements)
+  - 工作日专属支持 (business-hours dedicated support)
+  quota: none published
+  overage: none published
+  limits: 5 courses, 5 trainees, 5 partnership engagements
+- name: 旗舰版
+  name_en: Flagship
+  price: 8999
+  currency: CNY
+  period: month
+  audience: 适合大型企业和高并发业务 — large enterprises and high-concurrency workloads; 大型集团
+  included:
+  - 生态共建旗舰：全链路运营 (full-lifecycle ecosystem operations)
+  - 大型集团全链路 AIBPO 生态运营 (group-wide AIBPO ecosystem operation)
+  - 10门定制课程 (10 custom courses)
+  - 20人定制化培训、认证及推荐 (customized training, certification and placement for 20 people)
+  - 7×24小时专属支持 (24/7 dedicated support)
+  quota: none published
+  overage: none published
+  limits: 10 courses, 20 trainees
+- name: 定制化解决方案
+  name_en: Custom solution
+  price: null
+  currency: CNY
+  period: null
+  audience: 需要定制化解决方案？联系我们获取定制报价 — contact for a custom quote
+  included:
+  - 定制报价 (custom quote)
+  quota: none published
+  overage: none published
+  limits: none published
+free_tier: false
+trial: none published
+sales_contact:
+  form: http://www.51haohuo.com/#contact
+  email: service@51haohuo.com
+  phone: 400-888-9999
+  hours: 工作日 9:00-18:00 (business days)
+x-evidence:
+- url: http://www.51haohuo.com/
+  http_status: 200
+  content_type: text/html
+  bytes: 44283
+  last_modified: 'Thu, 16 Oct 2025 09:45:15 GMT'
+  fetched: '2026-09-05'
+  note: >-
+    Read over HTTP. The host does present a valid TLSv1.3 certificate on port 443
+    (expiry Dec 19 2026, observed by the domain-security probe), but HTTPS requests
+    from this vantage point stalled repeatedly at 45s without returning a body, so the
+    pricing was captured from the HTTP origin, which served it reliably.

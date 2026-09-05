@@ -1,7 +1,15 @@
 aid: 51haohuo-com
 name: 51haohuo.com
-description: '51haohuo.com is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: '51haohuo.com is the corporate site of 好活（苏州）数字科技有限公司 (Haohuo (Suzhou)
+  Digital Technology Co., Ltd.), a Suzhou, Jiangsu based Chinese software vendor trading
+  under the 苏爱才 ("Su Ai Cai") brand as a 人才服务供应商 — a talent-services supplier. It
+  markets six enterprise SaaS lines to Chinese employers: a 零工平台 (gig-work platform),
+  a 产业园平台 (industrial-park platform), 鹦鹉课堂 (a courseware/training product), a 智能体平台
+  (AI agent platform), a 做课平台 (course-authoring platform), and custom AIBPO
+  engagements, sold on three published monthly tiers. As of the 2026-09-05 probe the
+  company runs a single-page marketing site with a request-a-demo contact form and
+  publishes no developer program, API reference, or machine-readable specification of
+  any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/51haohuo-com/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,14 @@ created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
+- China
+- Human Resources
+- Staffing
+- Gig Economy
+- Workforce Management
+- Talent Services
+- Enterprise Software
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +36,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: http://www.51haohuo.com/
+- type: Pricing
+  url: http://www.51haohuo.com/#pricing
+- type: Support
+  url: http://www.51haohuo.com/#contact
+- type: Plans
+  url: plans/51haohuo-com-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/51haohuo-com-rate-limits.yml
+- type: DomainSecurity
+  url: security/51haohuo-com-domain-security.yml
+- type: LLMsTxt
+  url: llms/51haohuo-com-llms.txt
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    好活（苏州）数字科技有限公司 ships enterprise SaaS but its entire public web surface is one
+    static Tailwind marketing page on nginx that 404s /docs, /api, /developer, /openapi.json
+    and every /.well-known/ path — the only integration path it offers a partner is the
+    申请演示 (request-a-demo) contact form.
+  evidence:
+    - url: http://www.51haohuo.com/
+      status: 200
+    - url: http://www.51haohuo.com/developer
+      status: 404
+    - url: http://www.51haohuo.com/openapi.json
+      status: 404
+    - url: http://www.51haohuo.com/.well-known/api-catalog
+      status: 404
+    - url: http://51haohuo.com/.well-known/agent-card.json
+      status: 301
+  checked: '2026-09-05'
