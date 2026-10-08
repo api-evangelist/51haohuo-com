@@ -95,3 +95,38 @@ x-evidence:
     (expiry Dec 19 2026, observed by the domain-security probe), but HTTPS requests
     from this vantage point stalled repeatedly at 45s without returning a body, so the
     pricing was captured from the HTTP origin, which served it reliably.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units: []
+  plans:
+  - name: 基础版
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: 企业版
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: 旗舰版
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: 定制化解决方案
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods: []
